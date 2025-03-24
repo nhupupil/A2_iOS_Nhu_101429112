@@ -17,14 +17,19 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         seedProductsIfNeeded()
+        
+        // Fetch products if they are not already loaded
+        if products.isEmpty {
+            fetchProducts()
+        }
         
         if let firstProduct = fetchFirstProduct() {
             displayProduct(firstProduct)
         }
         
-        fetchProducts()
+        
     }
     //Seed 10 products if none exists
     func seedProductsIfNeeded() {
@@ -94,15 +99,15 @@ class FirstViewController: UIViewController {
     
     /// Load All Products
     func fetchProducts() {
-          let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-          do {
-              products = try context.fetch(fetchRequest)
-          } catch {
-              print("Failed to fetch products: \(error)")
-          }
+      do {
+          products = try context.fetch(fetchRequest)
+      } catch {
+          print("Failed to fetch products: \(error)")
       }
+    }
     
     /// NAVIGATE BETWEEN PRODUCTS
     
@@ -140,7 +145,14 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func showProducts(_ sender: UIBarButtonItem) {
+        let productsTableVC = storyboard?.instantiateViewController(withIdentifier: "ProductTableViewController") as! ProductTableViewController
+        
+        
+        // Push the new view controller onto the navigation stack
+        navigationController?.pushViewController(productsTableVC, animated: true)
     }
+    
+  
     
 }
 
