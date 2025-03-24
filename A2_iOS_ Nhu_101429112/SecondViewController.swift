@@ -10,13 +10,18 @@ import CoreData
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet private weak var idTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var descTextField: UITextField!
+    @IBOutlet private weak var priceTextField: UITextField!
+    @IBOutlet private weak var providerTextField: UITextField!
     
-    @IBOutlet var textFields: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
 
@@ -31,23 +36,13 @@ class SecondViewController: UIViewController {
     */
 
     
-    // Fetch Products from Core Data
-    func fetchProducts() {
-          let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
-          
-          do {
-              products = try context.fetch(fetchRequest)
-          } catch {
-              print("Failed to fetch products: \(error)")
-          }
-      }
-
+   
     @IBAction func submitForm(_ sender: UIButton) {
-        let id = textFields[0].text ?? ""
-        let name = textFields[1].text ?? ""
-        let desc = textFields[2].text ?? ""
-        let priceString = textFields[3].text ?? ""
-        let provider = textFields[4].text ?? ""
+        let id = idTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let desc = descTextField.text ?? ""
+        let priceString = priceTextField.text ?? ""
+        let provider = providerTextField.text ?? ""
         
         guard let price = Double(priceString) else {
             return
@@ -56,7 +51,22 @@ class SecondViewController: UIViewController {
         let product = Product(context: context)
         product.id = id
         product.name = name
+        product.desc = desc
         price > 0 ? product.price = price : ()
+        product.provider = provider
+        
         products.append(product)
+        
+        saveProduct()
+        
+        print("submit and save successfully")
+    }
+    
+    func saveProduct() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving new product: \(error)")
+        }
     }
 }

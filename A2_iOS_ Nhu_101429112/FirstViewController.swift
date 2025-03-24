@@ -13,16 +13,17 @@ class FirstViewController: UIViewController {
     
     @IBOutlet private var textFields: [UITextField]!
     
-    var products: [Product] = []
     var currentProductIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         seedProductsIfNeeded()
+        
         if let firstProduct = fetchFirstProduct() {
             displayProduct(firstProduct)
         }
+        
         fetchProducts()
     }
     //Seed 10 products if none exists
