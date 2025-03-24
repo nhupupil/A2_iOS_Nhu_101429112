@@ -44,7 +44,9 @@ class SecondViewController: UIViewController {
         let priceString = priceTextField.text ?? ""
         let provider = providerTextField.text ?? ""
         
-        guard let price = Double(priceString) else {
+        guard let price = Double(priceString), price > 0 else {
+            // If price is not valid, show an error alert
+            showAlert(title: "Error", message: "Please enter a valid price greater than 0.")
             return
         }
         
@@ -59,7 +61,19 @@ class SecondViewController: UIViewController {
         
         saveProduct()
         
-        print("submit and save successfully")
+        // Show confirmation alert
+        showAlert(title: "Success", message: "Product submitted successfully!")
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // Add an action (button) to dismiss the alert
+        let dismissAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(dismissAction)
+        
+        // Present the alert
+        present(alertController, animated: true, completion: nil)
     }
     
     func saveProduct() {

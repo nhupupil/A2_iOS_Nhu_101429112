@@ -105,8 +105,8 @@
                                     <action selector="showNextProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc8-PY-reI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ey-tR-Idd">
-                                <rect key="frame" x="145" y="103" width="102" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Single Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-r1-RwT">
+                                <rect key="frame" x="120" y="103" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -118,15 +118,15 @@
                             <constraint firstAttribute="bottom" secondItem="uc8-DJ-YN3" secondAttribute="bottom" constant="100" id="3tI-lI-944"/>
                             <constraint firstAttribute="bottom" secondItem="Z9A-Ox-vTR" secondAttribute="bottom" constant="100" id="A4R-kf-x6C"/>
                             <constraint firstItem="IBE-ci-1dC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CIm-89-gQD"/>
+                            <constraint firstItem="IBE-ci-1dC" firstAttribute="top" secondItem="LaG-r1-RwT" secondAttribute="bottom" constant="164.33000000000001" id="EQ7-2q-3Sv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uc8-DJ-YN3" secondAttribute="trailing" constant="30" id="Ezf-gD-Sml"/>
                             <constraint firstItem="Z9A-Ox-vTR" firstAttribute="top" secondItem="IBE-ci-1dC" secondAttribute="bottom" constant="150" id="Frk-GP-ui9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LaG-r1-RwT" secondAttribute="trailing" constant="120" id="KTQ-fg-91I"/>
+                            <constraint firstItem="LaG-r1-RwT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tza-Lc-2Pe"/>
                             <constraint firstItem="uc8-DJ-YN3" firstAttribute="top" secondItem="IBE-ci-1dC" secondAttribute="bottom" constant="150" id="U0U-nC-NjZ"/>
-                            <constraint firstItem="4ey-tR-Idd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="dnd-fn-u4U"/>
+                            <constraint firstItem="LaG-r1-RwT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="er1-VL-wQh"/>
                             <constraint firstItem="Z9A-Ox-vTR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pdE-tk-FF7"/>
                             <constraint firstItem="IBE-ci-1dC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pve-Oj-lHh"/>
-                            <constraint firstItem="4ey-tR-Idd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vbk-TO-YAa"/>
-                            <constraint firstItem="IBE-ci-1dC" firstAttribute="top" secondItem="4ey-tR-Idd" secondAttribute="bottom" constant="164.33000000000001" id="vgy-e8-MWb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ey-tR-Idd" secondAttribute="trailing" constant="146" id="zzf-fJ-r3E"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
