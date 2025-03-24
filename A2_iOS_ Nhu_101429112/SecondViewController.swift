@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet private weak var textFields: UITextField!
+    
+    @IBOutlet var textFields: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,33 @@ class SecondViewController: UIViewController {
     }
     */
 
+    
+    // Fetch Products from Core Data
+    func fetchProducts() {
+          let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+          
+          do {
+              products = try context.fetch(fetchRequest)
+          } catch {
+              print("Failed to fetch products: \(error)")
+          }
+      }
+
     @IBAction func submitForm(_ sender: UIButton) {
+        let id = textFields[0].text ?? ""
+        let name = textFields[1].text ?? ""
+        let desc = textFields[2].text ?? ""
+        let priceString = textFields[3].text ?? ""
+        let provider = textFields[4].text ?? ""
         
+        guard let price = Double(priceString) else {
+            return
+        }
+        
+        let product = Product(context: context)
+        product.id = id
+        product.name = name
+        price > 0 ? product.price = price : ()
+        products.append(product)
     }
 }

@@ -89,6 +89,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9A-Ox-vTR">
+                                <rect key="frame" x="31" y="730" width="90" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Previous"/>
+                                <connections>
+                                    <action selector="showPreviousProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEq-UY-Hhn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc8-DJ-YN3">
+                                <rect key="frame" x="288" y="730" width="60" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <connections>
+                                    <action selector="showNextProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc8-PY-reI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,7 +243,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="gaW-7g-R9i"/>
                     <connections>
-                        <outlet property="textFields" destination="Ks6-K2-CUk" id="zfc-5O-QkA"/>
+                        <outlet property="textFields" destination="Ks6-K2-CUk" id="JBa-5C-5TK"/>
+                        <outletCollection property="textFields" destination="OWF-0u-lwd" collectionClass="NSMutableArray" id="rK4-gG-lDh"/>
+                        <outletCollection property="textFields" destination="oHs-Jq-gCt" collectionClass="NSMutableArray" id="v4D-MA-QDZ"/>
+                        <outletCollection property="textFields" destination="OEZ-3w-TLK" collectionClass="NSMutableArray" id="eB7-Dr-7od"/>
+                        <outletCollection property="textFields" destination="BEC-UB-alc" collectionClass="NSMutableArray" id="w5K-Zw-E4t"/>
+                        <outletCollection property="textFields" destination="Ks6-K2-CUk" collectionClass="NSMutableArray" id="OxV-0Y-bhV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0L-zw-ASY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
