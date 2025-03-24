@@ -9,6 +9,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet private weak var textFields: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,7 @@ class SecondViewController: UIViewController {
     }
     */
 
+    @IBAction func submitForm(_ sender: UIButton) {
+        
+    }
 }
