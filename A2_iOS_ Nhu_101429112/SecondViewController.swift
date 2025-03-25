@@ -38,7 +38,7 @@ class SecondViewController: UIViewController {
     
    
     @IBAction func submitForm(_ sender: UIButton) {
-        let id = idTextField.text ?? ""
+        var id = idTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let desc = descTextField.text ?? ""
         let priceString = priceTextField.text ?? ""
@@ -46,6 +46,10 @@ class SecondViewController: UIViewController {
         
         
         // Validate input fields
+        // Auto-generate ID if empty
+        if id.isEmpty {
+            id = generateProductID()
+        }
         if name.isEmpty {
             showAlert(title: "Error", message: "Product name cannot be empty.")
             return
@@ -93,5 +97,10 @@ class SecondViewController: UIViewController {
         } catch {
             print("Error saving new product: \(error)")
         }
+    }
+    // Function to generate random Product ID
+    func generateProductID() -> String {
+        let randomNum = Int.random(in: 10...9999) // Generate a random
+        return "P\(randomNum)"
     }
 }
