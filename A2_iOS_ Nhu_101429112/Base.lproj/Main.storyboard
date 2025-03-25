@@ -129,12 +129,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5wh-lT-KiR">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="K3x-fp-NPz">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="showProducts:" destination="BYZ-38-t0r" id="l79-Sr-jGK"/>
                                 <segue destination="Q7l-TD-r6c" kind="show" id="57P-wZ-PrI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tC8-Qh-91r">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="tC8-Qh-91r">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <action selector="addProduct:" destination="BYZ-38-t0r" id="0pg-1x-b0B"/>
                                 <segue destination="Ox9-Qe-drL" kind="show" id="6qJ-zF-owK"/>
@@ -143,8 +145,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addBarButtonItem" destination="tC8-Qh-91r" id="TrF-UR-peN"/>
-                        <outlet property="bookmarkBarButtonItem" destination="K3x-fp-NPz" id="Cjc-DG-pZP"/>
                         <outletCollection property="textFields" destination="eqb-Rj-bJB" collectionClass="NSMutableArray" id="ziD-4s-VrS"/>
                         <outletCollection property="textFields" destination="fcP-Fl-PiI" collectionClass="NSMutableArray" id="vzm-zI-X2s"/>
                         <outletCollection property="textFields" destination="XSL-to-kDx" collectionClass="NSMutableArray" id="KdW-HD-27J"/>
@@ -352,6 +352,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
