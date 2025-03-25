@@ -249,6 +249,12 @@
                                     <action selector="submitForm:" destination="Ox9-Qe-drL" eventType="touchUpInside" id="8oR-sr-WLk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-ik-C0o">
+                                <rect key="frame" x="149" y="103.66666666666667" width="95" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CnD-ay-wL7"/>
                         <color key="backgroundColor" red="0.16722430129999999" green="0.94649032529999999" blue="0.79045601460000003" alpha="0.83359906459999999" colorSpace="custom" customColorSpace="displayP3"/>
@@ -256,7 +262,10 @@
                             <constraint firstItem="lso-eu-ETa" firstAttribute="centerX" secondItem="AcJ-DF-U2h" secondAttribute="centerX" id="CxZ-XM-XTE"/>
                             <constraint firstItem="lso-eu-ETa" firstAttribute="centerY" secondItem="AcJ-DF-U2h" secondAttribute="centerY" id="IYo-Pa-l8f"/>
                             <constraint firstItem="RiM-04-hAm" firstAttribute="top" secondItem="lso-eu-ETa" secondAttribute="bottom" constant="45" id="KPJ-5H-r9I"/>
+                            <constraint firstItem="57i-ik-C0o" firstAttribute="leading" secondItem="CnD-ay-wL7" secondAttribute="leading" constant="149" id="WGU-TC-Cxj"/>
+                            <constraint firstItem="lso-eu-ETa" firstAttribute="top" secondItem="57i-ik-C0o" secondAttribute="bottom" constant="157" id="fZt-d4-8n0"/>
                             <constraint firstItem="RiM-04-hAm" firstAttribute="centerX" secondItem="AcJ-DF-U2h" secondAttribute="centerX" id="lOr-Uv-PvJ"/>
+                            <constraint firstItem="CnD-ay-wL7" firstAttribute="trailing" secondItem="57i-ik-C0o" secondAttribute="trailing" constant="149" id="nYC-Gg-UDa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gaW-7g-R9i"/>

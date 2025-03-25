@@ -19,8 +19,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Add New Product"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
         // Do any additional setup after loading the view.
         
     }
@@ -65,15 +64,14 @@ class SecondViewController: UIViewController {
         // Auto-generate ID if empty
           if id.isEmpty || isProductIDExists(id) {
               id = generateUniqueProductID()
-              showAlert(title: "Notice", message: "The provided ID already exists or was empty. A new ID has been generated.")
-              print( "The provided ID already exists or was empty. A new ID (\(id)) has been generated.")
+              showAlert(title: "Notice", message: "The provided ID already exists or was empty. A new ID (\(id)) has been generated.")
           }
         
         let product = Product(context: context)
         product.id = id
         product.name = name
         product.desc = desc
-        price >= 0 ? product.price = price : ()
+        price > 0 ? product.price = price : ()
         product.provider = provider
         
         products.append(product)
