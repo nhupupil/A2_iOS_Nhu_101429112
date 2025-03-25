@@ -15,6 +15,8 @@ class ProductTableViewController: UITableViewController,UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Products List"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         /// Setup the search bar
         searchBar.delegate = self
