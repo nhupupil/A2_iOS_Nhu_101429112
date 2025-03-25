@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class SecondViewController: UIViewController {
-
+    
     @IBOutlet private weak var idTextField: UITextField!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var descTextField: UITextField!
@@ -19,24 +19,24 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     
-   
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    
+    
     @IBAction func submitForm(_ sender: UIButton) {
         var id = idTextField.text ?? ""
         let name = nameTextField.text ?? ""
@@ -46,10 +46,6 @@ class SecondViewController: UIViewController {
         
         
         // Validate input fields
-        // Auto-generate ID if empty
-        if id.isEmpty {
-            id = generateProductID()
-        }
         if name.isEmpty {
             showAlert(title: "Error", message: "Product name cannot be empty.")
             return
@@ -64,6 +60,12 @@ class SecondViewController: UIViewController {
             showAlert(title: "Error", message: "Please enter a valid price greater than 0.")
             return
         }
+        
+        // Auto-generate ID if empty
+          if id.isEmpty || isProductIDExists(id) {
+              id = generateUniqueProductID()
+              showAlert(title: "Notice", message: "The provided ID already exists or was empty. A new ID (\(id)) has been generated.")
+          }
         
         let product = Product(context: context)
         product.id = id
@@ -98,9 +100,27 @@ class SecondViewController: UIViewController {
             print("Error saving new product: \(error)")
         }
     }
-    // Function to generate random Product ID
-    func generateProductID() -> String {
-        let randomNum = Int.random(in: 10...9999) // Generate a random
-        return "P\(randomNum)"
+    
+    // Function to generate a unique product ID
+    func generateUniqueProductID() -> String {
+        var newID: String
+        repeat {
+            let randomNum = Int.random(in: 10...9999)
+            newID = "P\(randomNum)"
+        } while isProductIDExists(newID)  // Keep generating until a unique ID is found
+        return newID
     }
-}
+    
+    // Function to check if product ID already exists in Core Data
+    func isProductIDExists(_ id: String) -> Bool {
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        
+        do {
+            let matchingProducts = try context.fetch(fetchRequest)
+            return !matchingProducts.isEmpty
+        } catch {
+            print("Error checking product ID: \(error)")
+            return false
+        }
+    }}
