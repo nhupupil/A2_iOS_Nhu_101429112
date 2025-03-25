@@ -44,6 +44,17 @@ class SecondViewController: UIViewController {
         let priceString = priceTextField.text ?? ""
         let provider = providerTextField.text ?? ""
         
+        
+        // Validate input fields
+        if name.isEmpty {
+            showAlert(title: "Error", message: "Product name cannot be empty.")
+            return
+        }
+        
+        if desc.isEmpty {
+            showAlert(title: "Error", message: "Product description cannot be empty.")
+            return
+        }
         guard let price = Double(priceString), price > 0 else {
             // If price is not valid, show an error alert
             showAlert(title: "Error", message: "Please enter a valid price greater than 0.")
