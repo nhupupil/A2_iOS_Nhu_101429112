@@ -18,6 +18,10 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "View Single Product"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // Seed 10 products
         seedProductsIfNeeded()
         
         // Fetch products if they are not already loaded
