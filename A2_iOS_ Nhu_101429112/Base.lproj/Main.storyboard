@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W1H-A7-NOn">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -91,30 +91,23 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9A-Ox-vTR">
                                 <rect key="frame" x="30.000000000000007" y="713.66666666666663" width="89.666666666666686" height="38.333333333333371"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Previous">
-                                    <backgroundConfiguration key="background"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" title="Previous"/>
                                 <connections>
                                     <action selector="showPreviousProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEq-UY-Hhn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc8-DJ-YN3">
                                 <rect key="frame" x="303.33333333333331" y="713.66666666666663" width="59.666666666666686" height="38.333333333333371"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next" cornerStyle="medium">
-                                    <backgroundConfiguration key="background"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
                                 <connections>
                                     <action selector="showNextProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc8-PY-reI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uc8-DJ-YN3" secondAttribute="bottom" constant="100" id="3tI-lI-944"/>
                             <constraint firstAttribute="bottom" secondItem="Z9A-Ox-vTR" secondAttribute="bottom" constant="100" id="A4R-kf-x6C"/>
@@ -128,13 +121,13 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5wh-lT-KiR">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="K3x-fp-NPz">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="book" catalog="system" id="K3x-fp-NPz">
                             <connections>
                                 <action selector="showProducts:" destination="BYZ-38-t0r" id="l79-Sr-jGK"/>
                                 <segue destination="Q7l-TD-r6c" kind="show" id="57P-wZ-PrI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tC8-Qh-91r">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="tC8-Qh-91r">
                             <connections>
                                 <action selector="addProduct:" destination="BYZ-38-t0r" id="0pg-1x-b0B"/>
                                 <segue destination="Ox9-Qe-drL" kind="show" id="6qJ-zF-owK"/>
@@ -143,8 +136,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addBarButtonItem" destination="tC8-Qh-91r" id="TrF-UR-peN"/>
-                        <outlet property="bookmarkBarButtonItem" destination="K3x-fp-NPz" id="Cjc-DG-pZP"/>
                         <outletCollection property="textFields" destination="eqb-Rj-bJB" collectionClass="NSMutableArray" id="ziD-4s-VrS"/>
                         <outletCollection property="textFields" destination="fcP-Fl-PiI" collectionClass="NSMutableArray" id="vzm-zI-X2s"/>
                         <outletCollection property="textFields" destination="XSL-to-kDx" collectionClass="NSMutableArray" id="KdW-HD-27J"/>
@@ -239,33 +230,20 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-04-hAm">
                                 <rect key="frame" x="157.66666666666666" y="616" width="78" height="38.333333333333371"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Submit" subtitle="">
-                                    <backgroundConfiguration key="background"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                                 <connections>
                                     <action selector="submitForm:" destination="Ox9-Qe-drL" eventType="touchUpInside" id="8oR-sr-WLk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-ik-C0o">
-                                <rect key="frame" x="149" y="103.66666666666667" width="95" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CnD-ay-wL7"/>
-                        <color key="backgroundColor" red="0.16722430129999999" green="0.94649032529999999" blue="0.79045601460000003" alpha="0.83359906459999999" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lso-eu-ETa" firstAttribute="centerX" secondItem="AcJ-DF-U2h" secondAttribute="centerX" id="CxZ-XM-XTE"/>
                             <constraint firstItem="lso-eu-ETa" firstAttribute="centerY" secondItem="AcJ-DF-U2h" secondAttribute="centerY" id="IYo-Pa-l8f"/>
                             <constraint firstItem="RiM-04-hAm" firstAttribute="top" secondItem="lso-eu-ETa" secondAttribute="bottom" constant="45" id="KPJ-5H-r9I"/>
-                            <constraint firstItem="57i-ik-C0o" firstAttribute="leading" secondItem="CnD-ay-wL7" secondAttribute="leading" constant="149" id="WGU-TC-Cxj"/>
-                            <constraint firstItem="lso-eu-ETa" firstAttribute="top" secondItem="57i-ik-C0o" secondAttribute="bottom" constant="157" id="fZt-d4-8n0"/>
                             <constraint firstItem="RiM-04-hAm" firstAttribute="centerX" secondItem="AcJ-DF-U2h" secondAttribute="centerX" id="lOr-Uv-PvJ"/>
-                            <constraint firstItem="CnD-ay-wL7" firstAttribute="trailing" secondItem="57i-ik-C0o" secondAttribute="trailing" constant="149" id="nYC-Gg-UDa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gaW-7g-R9i"/>
@@ -289,8 +267,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexBackgroundColor" red="0.16722430129999999" green="0.94649032529999999" blue="0.79045601460000003" alpha="0.83359906459999999" colorSpace="custom" customColorSpace="displayP3"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search by name or description" id="j7z-4L-ys5">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -359,6 +335,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

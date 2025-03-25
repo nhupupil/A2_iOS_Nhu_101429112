@@ -10,9 +10,6 @@ import CoreData
 
 class FirstViewController: UIViewController {
 
-    @IBOutlet private weak var bookmarkBarButtonItem: UIBarButtonItem!
-    
-    @IBOutlet private weak var addBarButtonItem: UIBarButtonItem!
     
     @IBOutlet private var textFields: [UITextField]!
     
@@ -21,11 +18,10 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Title
         self.title = "View Single Product"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-       
-        // Seed 10 products
         seedProductsIfNeeded()
         
         // Fetch products if they are not already loaded
